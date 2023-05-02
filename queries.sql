@@ -50,11 +50,14 @@ BEGIN;
 UPDATE animals
 SET species = 'digimon'
 WHERE name LIKE '%mon';
+SELECT * FROM animals;
 /*UUpdate the animals table by setting the species column to "pokemon" for all animals that don't have species already set::*/
 UPDATE animals
 SET species = 'pokemon'
 WHERE species IS NULL;
+SELECT * FROM animals;
 COMMIT;
+SELECT * FROM animals;
 
 
 /*Removing and bringing back all the records with help of transaction::*/
@@ -95,7 +98,7 @@ SELECT species, max(weight_kg), min(weight_kg) from animals GROUP BY species;
 
 
 /* showing average of escape_attempts of type of animals which born  between 1900 and 200*/
-SELECT species, AVG(escape_attempts)  from animals WHERE date_of_birth BETWEEN '1900-01-01' AND '2000-01-01;'
+SELECT species, AVG(escape_attempts)  from animals WHERE date_of_birth BETWEEN BETWEEN '1990-01-01' AND '2000-12-31;
 
 
 

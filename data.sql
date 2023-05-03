@@ -23,7 +23,7 @@ VALUES('Sam Smith', 34),
       ('Bob', 45),
       ('Melody Pond', 77), 
       ('Dean Winchester',14),
-      ('Jodie Whittaker', 39);
+      ('Jodie Whittaker', 38);
 
 -- Add data to owners table
 INSERT into species(name)

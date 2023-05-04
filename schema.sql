@@ -11,3 +11,21 @@ CREATE TABLE animals (
 ALTER TABLE animals
 ADD COLUMN species VARCHAR(250);
 
+-- create owners table
+CREATE TABLE owners (
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(250),
+    age INTEGER
+);
+
+-- create species table
+CREATE TABLE species (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(250)
+);
+
+-- Add species_id as foreign key to animals table
+ALTER table animals ADD COLUMN species_id int, FOREIGN KEY (species_id) REFERENCES species(id);
+
+-- Add owner_id as foreign key to animals table
+ALTER table animals ADD COLUMN owner_id int, FOREIGN KEY (owner_id) REFERENCES owners(id);

@@ -98,7 +98,56 @@ SELECT species, max(weight_kg), min(weight_kg) from animals GROUP BY species;
 
 
 /* showing average of escape_attempts of type of animals which born  between 1900 and 200*/
-SELECT species, AVG(escape_attempts)  from animals WHERE date_of_birth BETWEEN BETWEEN '1990-01-01' AND '2000-12-31;
+SELECT species, AVG(escape_attempts)  from animals WHERE date_of_birth  BETWEEN '1990-01-01' AND '2000-12-31';
+
+
+-- SELECT ANIMALS NAME BELONGS TO Melody Pond
+SELECT animals.name,owners.full_name
+FROM animals
+INNER JOIN owners ON animals.owner_id = owners.id
+WHERE owners.full_name = 'Melody Pond';
+
+--List of all animals that are pokemon (their type is Pokemon).
+SELECT animals.name FROM animals INNER JOIN species ON animals.species_id= species.id WHERE species.name='Pokemon';
+
+--List all owners and their animals, remember to include those that don't own any animal.
+SELECT owners.full_name, animals.name
+FROM owners
+LEFT JOIN animals ON owners.id = animals.owner_id
+ORDER BY owners.full_name;
+
+--How many animals are there per species?
+SELECT species.name, COUNT(animals.id) AS num_animals
+FROM animals
+INNER JOIN species ON animals.species_id = species.id
+GROUP BY species.name;
+
+--List all Digimon owned by Jennifer Orwell.
+SELECT animals.name AS Animal_name, species.name as Species_name, owners.full_name as Owner_name
+FROM animals
+INNER JOIN species
+ON animals.species_id = species.id
+INNER JOIN owners
+ON animals.owner_id = owners.id where owners.full_name='Jennifer Orwell' AND species.name= 'Digimon';
+
+--List all animals owned by Dean Winchester that haven't tried to escape.
+SELECT animals.name,owners.full_name,escape_attempts FROM 
+animals INNER JOIN owners ON animals.owner_id= owners.id INNER JOIN
+ species ON animals.species_id=species.id WHERE
+  escape_attempts=0 AND owners.full_name='Dean Winchester';
+
+  --Who owns the most animals?
+SELECT owners.full_name, COUNT(animals.id) as animal_count
+FROM owners
+INNER JOIN animals ON owners.id = animals.owner_id
+GROUP BY owners.id
+ORDER BY animal_count DESC
+LIMIT 1;
+
+
+
+
+
 
 
 

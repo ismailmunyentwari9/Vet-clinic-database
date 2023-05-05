@@ -29,3 +29,18 @@ ALTER table animals ADD COLUMN species_id int, FOREIGN KEY (species_id) REFERENC
 
 -- Add owner_id as foreign key to animals table
 ALTER table animals ADD COLUMN owner_id int, FOREIGN KEY (owner_id) REFERENCES owners(id);
+
+--Create a table named vets
+create table vets
+(id SERIAL PRIMARY key,name VARCHAR (255)
+,age int,date_of_graduation date);
+
+--Create table specialization
+CREATE TABLE specialization(id SERIAL PRIMARY key, vet_id int, FOREIGN key(vet_id) REFERENCES vets(id),species_id int, FOREIGN key(species_id) REFERENCES species(id));
+
+--create visits table 
+CREATE TABLE visits(id SERIAL PRIMARY KEY,
+animal_id int,FOREIGN KEY(animal_id)
+ REFERENCES animals(id), vet_id int,
+  FOREIGN KEY(vet_id) REFERENCES vets(id), visit_date date);
+

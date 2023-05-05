@@ -39,5 +39,8 @@ create table vets
 CREATE TABLE specialization(id SERIAL PRIMARY key, vet_id int, FOREIGN key(vet_id) REFERENCES vets(id),species_id int, FOREIGN key(species_id) REFERENCES species(id));
 
 --create visits table 
-CREATE TABLE visits(id SERIAL PRIMARY KEY,animal_id int,FOREIGN KEY(animal_id) REFERENCES animals(id), vet_id int, FOREIGN KEY(vet_id) REFERENCES vets(id), visit_date date);
+CREATE TABLE visits(id SERIAL PRIMARY KEY,
+animal_id int,FOREIGN KEY(animal_id)
+ REFERENCES animals(id), vet_id int,
+  FOREIGN KEY(vet_id) REFERENCES vets(id), visit_date date);
 

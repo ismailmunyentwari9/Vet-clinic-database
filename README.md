@@ -53,6 +53,12 @@ Clone this repository to your desired folder using the following command; git cl
 
 - GitHub: [@Ismail-Munyentwari](https://github.com/ismailmunyentwari9)
 - LinkedIn: [@Ismail-Munyentwari](https://www.linkedin.com/in/munyentwari-ismail-754718191/)
+  
+  👤 **Daniel Matama**
+
+- GitHub: [@daniel matama](https://github.com/danielmatama)
+- LinkedIn: [@daniel matama](https://www.linkedin.com/in/danielmatamamwebesa/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

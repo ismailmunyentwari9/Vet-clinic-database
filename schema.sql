@@ -44,3 +44,6 @@ animal_id int,FOREIGN KEY(animal_id)
  REFERENCES animals(id), vet_id int,
   FOREIGN KEY(vet_id) REFERENCES vets(id), visit_date date);
 
+  -- Add an email column to owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
